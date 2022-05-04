@@ -19,3 +19,10 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ![image](https://user-images.githubusercontent.com/43299285/166651573-c916c764-c96b-43b6-b31f-609ea2222ed5.png)
 
 ![image](https://user-images.githubusercontent.com/43299285/166651668-c4f9385e-28df-4b24-a3c2-97b7a7bce9e9.png)
+
+## Adding ng store-devtools...
+`ng add @ngrx/store-devtools`
+
+[Install Redux Extension in Chrome](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=es)
+
+
