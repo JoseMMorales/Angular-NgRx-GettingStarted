@@ -7,26 +7,15 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Adding ng store command...
 `ng add @ngrx/store`
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Summary...
 
-## Code scaffolding
+![image](https://user-images.githubusercontent.com/43299285/166651214-193004a3-9e20-48d0-84ec-92c02e0ccfef.png)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+![image](https://user-images.githubusercontent.com/43299285/166651330-d1828591-3fb6-431e-9ac1-bbd8d4354fb2.png)
 
-## Build
+![image](https://user-images.githubusercontent.com/43299285/166651476-50e00e6c-0bc2-4703-b353-8f99627576cc.png)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+![image](https://user-images.githubusercontent.com/43299285/166651573-c916c764-c96b-43b6-b31f-609ea2222ed5.png)
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+![image](https://user-images.githubusercontent.com/43299285/166651668-c4f9385e-28df-4b24-a3c2-97b7a7bce9e9.png)
