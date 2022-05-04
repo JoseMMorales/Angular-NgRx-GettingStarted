@@ -25,4 +25,8 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 [Install Redux Extension in Chrome](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=es)
 
+## Summary...
+![image](https://user-images.githubusercontent.com/43299285/166673084-09176f58-155f-4801-b9a7-2eb4329357b5.png)
+
+![image](https://user-images.githubusercontent.com/43299285/166673149-fdea9d01-a59d-4341-82b7-142a20c54a8a.png)
 
