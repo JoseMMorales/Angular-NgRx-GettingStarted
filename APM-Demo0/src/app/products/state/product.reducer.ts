@@ -1,10 +1,10 @@
 import {
-  createAction,
   createFeatureSelector,
   createReducer,
   createSelector,
   on,
 } from '@ngrx/store';
+import * as ProductActions from './product.actions';
 import * as AppState from '../../state/app.state';
 import { Product } from '../product';
 
@@ -31,12 +31,46 @@ export const getShowProductCode = createSelector(
   (state) => state.showProductCode
 );
 
+export const getCurrentProduct = createSelector(
+  getProductFeatureState,
+  (state) => state.currentProduct
+);
+
+export const getProducts = createSelector(
+  getProductFeatureState,
+  (state) => state.products
+);
+
 export const productReducer = createReducer<ProductState>(
   initialState,
-  on(createAction('[Product] Toggle Product Code'), (state): ProductState => {
+  on(ProductActions.toggleProductCode, (state): ProductState => {
     return {
       ...state,
       showProductCode: !state.showProductCode,
+    };
+  }),
+  on(ProductActions.setCurrentProduct, (state, action): ProductState => {
+    return {
+      ...state,
+      currentProduct: action.product,
+    };
+  }),
+  on(ProductActions.clearCurrentProduct, (state): ProductState => {
+    return {
+      ...state,
+      currentProduct: null,
+    };
+  }),
+  on(ProductActions.initializeCurrentProduct, (state): ProductState => {
+    return {
+      ...state,
+      currentProduct: {
+        id: 0,
+        productName: '',
+        productCode: 'New',
+        description: '',
+        starRating: 0,
+      },
     };
   })
 );
