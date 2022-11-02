@@ -7,9 +7,8 @@ import { GenericValidator } from '../../shared/generic-validator';
 import { NumberValidators } from '../../shared/number.validator';
 
 import { Store } from '@ngrx/store';
-import { State, getCurrentProduct } from '../state/product.reducer';
-import * as ProductActions from '../state/product.actions';
-import { typeWithParameters } from '@angular/compiler/src/render3/util';
+import { State, getCurrentProduct } from '../state';
+import { ProductPageActions, ProductAPIActions } from '../state/actions';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -21,7 +20,7 @@ export class ProductEditComponent implements OnInit {
   errorMessage = '';
   productForm: FormGroup;
 
-  product$: Observable<Product | null>;
+  product$: Observable<Product>;
 
   // Use with the generic validation message class
   displayMessage: { [key: string]: string } = {};
@@ -122,13 +121,14 @@ export class ProductEditComponent implements OnInit {
     if (product && product.id) {
       if (confirm(`Really delete the product: ${product.productName}?`)) {
         this.productService.deleteProduct(product.id).subscribe({
-          next: () => this.store.dispatch(ProductActions.clearCurrentProduct()),
+          next: () =>
+            this.store.dispatch(ProductPageActions.clearCurrentProduct()),
           error: (err) => (this.errorMessage = err),
         });
       }
     } else {
       // No need to delete, it was never saved
-      this.store.dispatch(ProductActions.clearCurrentProduct());
+      this.store.dispatch(ProductPageActions.clearCurrentProduct());
     }
   }
 
@@ -144,18 +144,12 @@ export class ProductEditComponent implements OnInit {
           this.productService.createProduct(product).subscribe({
             next: (p) =>
               this.store.dispatch(
-                ProductActions.setCurrentProduct({ product: p })
+                ProductPageActions.setCurrentProduct({ currentProductId: p.id })
               ),
             error: (err) => (this.errorMessage = err),
           });
         } else {
-          this.productService.updateProduct(product).subscribe({
-            next: (p) =>
-              this.store.dispatch(
-                ProductActions.setCurrentProduct({ product: p })
-              ),
-            error: (err) => (this.errorMessage = err),
-          });
+          this.store.dispatch(ProductAPIActions.updateProduct({ product }));
         }
       }
     }
